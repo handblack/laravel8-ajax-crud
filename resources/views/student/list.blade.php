@@ -136,7 +136,7 @@
 				  student += '<td>' + data.last_name + '</td>';
 				  student += '<td>' + data.address + '</td>';
 				  student += '<td><a data-id="' + data.id + '" class="btn btn-primary btnEdit">Edit</a>&nbsp;&nbsp;<a data-id="' + data.id + '" class="btn btn-danger btnDelete">Delete</a></td>';
-				  student += '</tr>';            
+				  student += '</tr>';          
 				  $('#studentTable tbody').prepend(student);
 				  $('#addStudent')[0].reset();
 				  $('#addModal').modal('hide');

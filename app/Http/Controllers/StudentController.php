@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -62,8 +63,10 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit(Student $student,$id)
     {
+        $student= Student::find($id);
+        #return json_encode($student);
         return Response()->json($student);
     }
 
@@ -90,9 +93,9 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy(Student $student,$id)
     {
-        $student = Student::find($student);
+        $student = Student::find($id);
         $student->delete();
         return Response()->json($student);
     }
